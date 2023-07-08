@@ -1,0 +1,229 @@
+<!-- starting page nav bar -->
+<div *ngIf="d">
+    <nav class="navbar navbar-expand-sm" style="background-color: green">
+        <div class="navbar-header ">
+            <a class="navbar-brand p-3"><img src="https://images.shiksha.com/mediadata/images/1684517931php52sx7k.jpeg"
+                    width="70" height="60"></a>
+        </div>
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item" style="font-size: 30px;color: aliceblue;"><a class="nav-link" href="#"
+                    (click)="login()">
+                    sign up</a></li>
+            <li class="nav-item" style="font-size: 30px;color: white"><a class="nav-link" href="#"
+                    (click)="signin()">Login</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Login page -->
+<div *ngIf="a">
+    <div class="container px-4 py-5 mx-auto">
+        <div class="card card0">
+            <div class="d-flex flex-lg-row flex-column-reverse">
+                <div class="card card1">
+                    <div class="row justify-content-center my-auto">
+                        <div class="col-md-8 col-10 my-5">
+
+
+                            <h6 class="msg-info">Please login to your account</h6>
+
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Username</label>
+                                <input type="text" id="email" name="email" placeholder="Phone no or email id"
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Password</label>
+                                <input type="password" id="psw" name="psw" placeholder="Password" class="form-control">
+                            </div>
+
+                            <div class="row justify-content-center my-3 px-3">
+                                <button class="btn-block btn-color"><a (click)="frontend()">Login to Plants</a></button>
+                            </div>
+
+                            <div class="row justify-content-center my-2">
+                                <a href="#"><small class="text-muted">Forgot Password?</small></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card card2">
+                    <div class="my-auto mx-md-5 px-md-5 right">
+                        <h3 class="text-white">We are more than just a company</h3>
+                        <small class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- registration page -->
+<div *ngIf="b" >
+    <section class="vh-100" style="background-color: #eee;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                    <form class="mx-1 mx-md-4" #r="ngForm" (ngSubmit)="Insert(r)">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example1c">Your Name</label>
+                                                <input type="text" id="form3Example1c" class="form-control" ngModel required>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example3c">Your Email</label>
+                                                <input type="email" id="form3Example3c" class="form-control" ngModel required />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example4c">Password</label>
+                                                <input type="password" id="form3Example4c" class="form-control" ngModel required/>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="button" class="btn btn-success btn-lg" [disabled]="r.invalid">Register</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2017/01/10/Pictures/fantasy-beauty-fashion-summer-dress-green-leaves_f9779514-d711-11e6-a260-7aa04c68bc63.jpg"
+                                        class="img-fluid" alt="Sample image">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- green village inner frontend -->
+<div *ngIf="c">
+    <div class="navbar navbar-light bg-success navbar-expand-md ">
+        <a href="" class="navbar-brand" style="font-size: xx-large;color:yellow">Green Village <span
+                class="bi bi-tree-fill green-color"></span></a>
+
+        <div class="main-search-input-wrap ms-auto p-1">
+            <div class="main-search-input fl-wrap">
+                <div class="main-search-input-item">
+                   <input type="text" value="" placeholder="Search Products...">
+                    <button class="main-search-button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center ">
+
+        <div class="row border p-3" style="font-size: x-large;" id="topnav">
+            <div class="col"><a class="navbar-brand activity" routerLink="/home" routerLinkActive="active">Home</a>
+            </div>
+            <div class="col"><a class="navbar-brand" href="#">About</a></div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">PlantTypes</a>
+
+                <div class="dropdown-menu w-90 mt-0" aria-labelledby="navbarDropdown">
+
+                    <div class="container">
+                        <div class="row my-3">
+                            <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                <div class="list-group list-group-flush">
+                                    <div> <a routerLink="/flplants" routerLinkActive="active"
+                                            class="list-group-item list-group-item-action">Flowering Plants</a></div>
+                                    <a href="" class="list-group-item list-group-item-action">Non-Flowering Plants </a>
+                                    <a href="" class="list-group-item list-group-item-action">Ferns</a>
+                                    <a href="" class="list-group-item list-group-item-action">Mosses</a>
+                                    <a href="" class="list-group-item list-group-item-action">Algae</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                <div class="list-group list-group-flush">
+                                    <a href="" class="list-group-item list-group-item-action">Cacti and Succulents</a>
+                                    <a href="" class="list-group-item list-group-item-action">Bulbs</a>
+                                    <a href="" class="list-group-item list-group-item-action">Carnivorous Plants</a>
+                                    <a href="" class="list-group-item list-group-item-action">Aquatic Plants</a>
+                                    <a href="" class="list-group-item list-group-item-action">Trees</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"><a class="navbar-brand" href="#">Planting conditions</a></div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Seasonaly</a>
+                <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
+
+                    <div class="container">
+                        <div class="row my-3">
+
+                            <div class="list-group list-group-flush">
+                                <a routerLink="/summer" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Summer</a>
+                                <a routerLink="/winter" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Winter</a>
+                                <a routerLink="/spring" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Spring</a>
+                                <a routerLink="/autumn" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Autumn</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"><a class="navbar-brand" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+            </div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Village</a>
+                <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
+
+                    <div class="container">
+                        <div class="row my-3">
+
+                            <div class="list-group list-group-flush">
+                                <a href="" class="list-group-item list-group-item-action" routerLink="/impact" routerLinkActive="active">Impact</a>
+                                <a href="" class="list-group-item list-group-item-action" routerLink="/timeline" routerLinkActive="active">TimeLine</a>
+                                <a href="" class="list-group-item list-group-item-action">photos</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <router-outlet></router-outlet>

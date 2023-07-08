@@ -1,0 +1,22 @@
+#img
+{
+    border-radius: 50px;
+    box-shadow: 50px;
+    padding-bottom: 60px;
+}
+#grow
+{
+    background-color: rgb(39, 221, 39);
+   
+}
+#about
+{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+#container
+{
+    background-color: rgb(180, 238, 199);
+    padding-top: 10px;
+}
