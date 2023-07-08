@@ -14,6 +14,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { ImpactComponent } from './impact/impact.component';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,13 @@ import { FormsModule } from '@angular/forms';
     AutumnComponent,
     ContactusComponent,
     TimelineComponent,
-    ImpactComponent
+    ImpactComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
