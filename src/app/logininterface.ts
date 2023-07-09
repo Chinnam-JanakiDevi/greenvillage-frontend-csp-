@@ -1,9 +1,4 @@
-export interface Signupinterface {
-    name:string,
-    email:string,
-    password:string
-}
-export interface logins{
+export interface Logininterface {
     email:string,
     password:string
 }

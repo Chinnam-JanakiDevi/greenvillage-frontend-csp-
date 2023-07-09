@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { InsertedSuccess, UniqueConstraintError, Signupinterface } from './signupinterface';
+import { InsertedSuccess, UniqueConstraintError, Signupinterface, Read } from './signupinterface';
 
 
 @Injectable({
@@ -22,6 +22,10 @@ export class SignupserviceService {
       this.url + 'signup/Insert',
       Details,
       { headers: this.headers }
-  );
+    );
+  }
+
+  Read(email: String): Observable<Read> {
+    return this.http.get<Read>(`${this.url}login/Read${email}`);
   }
 }
