@@ -15,6 +15,14 @@ export interface sellplant{
     p_cost:Number;
 
 }
+export interface interface1 {
+    name:string;
+    email_address:string;
+    phone:number;
+    message:string
+
+}
+
 export interface UniqueConstraintError {
     errorNum: Number;
     offset: Number;

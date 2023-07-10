@@ -3,11 +3,11 @@
   color: greenyellow;
 }
 
-.main-search-input {
+/* .main-search-input {
   background: #fff;
   border-radius: 1px;
   box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);
-}
+} */
 
 #topnav a:hover {
   border-bottom: 3px solid olivedrab;
