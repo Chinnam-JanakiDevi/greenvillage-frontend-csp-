@@ -7,6 +7,14 @@ export interface logins{
     email:string,
     password:string
 }
+export interface sellplant{
+    p_id:String;
+    p_image:String;
+    p_name:String;
+    p_type:String;
+    p_cost:Number;
+
+}
 export interface UniqueConstraintError {
     errorNum: Number;
     offset: Number;

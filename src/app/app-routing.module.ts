@@ -9,6 +9,7 @@ import { AutumnComponent } from './autumn/autumn.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ImpactComponent } from './impact/impact.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { SellplantComponent } from './sellplant/sellplant.component';
 // import { flatMap } from 'rxjs';
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'autumn',component:AutumnComponent},
   {path:'contactus',component:ContactusComponent},
   {path:'impact',component:ImpactComponent},
-  {path:'timeline',component:TimelineComponent}
+  {path:'timeline',component:TimelineComponent},
+  {path:'sellplant',component:SellplantComponent}
 ];
 
 @NgModule({
@@ -37,6 +39,7 @@ export class AppRoutingModule { }
     AutumnComponent,
     ContactusComponent,
     TimelineComponent,
-    ImpactComponent
+    ImpactComponent,
+    SellplantComponent
   ]
 

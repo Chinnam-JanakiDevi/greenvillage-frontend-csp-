@@ -15,6 +15,7 @@ import { ImpactComponent } from './impact/impact.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SellplantComponent } from './sellplant/sellplant.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     ContactusComponent,
     TimelineComponent,
     ImpactComponent,
+    SellplantComponent,
    
   ],
   imports: [

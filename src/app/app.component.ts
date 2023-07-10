@@ -35,13 +35,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.b = true;
 
   }
-  frontend() {
-    this.a = false;
-    this.b = false;
-    this.e = false;
-    this.c = true;
-    this.d = false;
-  }
   signup: Signupinterface = {
     name: '',
     email: '',
@@ -90,15 +83,8 @@ export class AppComponent implements OnInit, OnDestroy {
           else{
             this.error=true;
           }
-          // console.log(data);
-          // this.readarray = data.Result[0];
-          // console.log(this.readarray);
-          // console.log(data.Result);
-          // this.readarray = data.Result[0];
-          // console.log(this.readarray);
         }
         else {
-          alert("invalid credentials");
           this.error=true;
 
         }
