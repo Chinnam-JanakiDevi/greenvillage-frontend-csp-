@@ -1,42 +1,103 @@
 <div class="container-fluid px-1 py-4 mx-auto">
     <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-9 col-md-9 col-11 text-center">
-            <!-- <h3>Sell your plant here</h3> -->
+            <h3>Sell your plant here</h3>
             <div class="card" style="margin-top: 10px;">
                 <h5 class="text-center mb-4" style="color: green;margin-top: 10px;">Sell your plant here</h5>
                 <form class="form-card">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Plant Id<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="Enter plant id" [(ngModel)]="User.p_id" name="p_id">
+                            <input type="text" placeholder="Enter plant id" [(ngModel)]="info.p_id" name="p_id">
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant image url<span class="text-danger">
                                     *</span></label> <input type="text" placeholder="Enter plant image url"
-                                [(ngModel)]="User.p_image" name="p_image"> </div>
+                                [(ngModel)]="info.p_image" name="p_image"> </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant Name <span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="User.p_name" name="p_name">
+                            <input type="text" placeholder="" [(ngModel)]="info.p_name" name="p_name">
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Plant type<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="User.p_type" name="p_type">
+                            <input type="text" placeholder="" [(ngModel)]="info.p_type" name="p_type">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant cost<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="User.p_cost" name="p_cost">
+                            <input type="text" placeholder="" [(ngModel)]="info.p_cost" name="p_cost">
                         </div>
                     </div>
 
-                    <div class="row justify-content-end">
-                        <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">
-                    </div>
+                    <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">&nbsp;
+
+                    <input type="submit" value="Update" class="btn btn-success my-2" (click)="Update()">&nbsp;
+
+                    &nbsp;
+                    <input type="submit" value="Read" class="btn btn-success my-2" (click)="Read()">&nbsp;
+
+                    <input type="submit" value="delete" class="btn btn-success my-2" (click)="Delete()">
+                    <input type="reset" class="btn btn-success my-2" value="reset">
+
                 </form>
             </div>
+
         </div>
     </div>
 </div>
+
+<form>
+
+    <h2 style="text-align: center;"><input type="text" id="name" name="catg" placeholder="enter your plant id"
+            [(ngModel)]="info.p_id">
+    </h2>
+
+
+    <h2 align="center" colspan="1"><input type="submit" value="submit" (click)="Read()"></h2>
+
+    <br>
+    <div *ngIf="canShowData">
+        <h1 style="text-align: center;font-size: xx-large;font-weight: bolder;color:black;">Plant Details</h1>
+        <table align="center" cellpadding="10">
+
+            <tr>
+                <td>plant id</td>
+                <td><input type="text" id="name" name="soil_type" placeholder="enter your plant id"
+                        [(ngModel)]="info.p_id" [value]=a[0] disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>Plant image</td>
+                <td><input type="text" id="name" name="ph_range" placeholder="enter ph_range" [(ngModel)]="info.p_image"
+                        [value]=a[1]>
+                </td>
+            </tr>
+            <tr>
+                <td>Plant name</td>
+                <td><input type="text" id="name" name="sunlight" placeholder="enter sunlight" [(ngModel)]="info.p_name"
+                        [value]=a[2]>
+                </td>
+            </tr>
+            <tr>
+                <td>Plant Type</td>
+                <td><input type="text" id="name" name="watering" placeholder="enter watering" [(ngModel)]="info.p_type"
+                        [value]=a[3]>
+                </td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td><input type="number" id="name" name="fertilizer" placeholder="enter HRA_per"
+                        [(ngModel)]="info.p_cost" [value]=a[4]>
+                </td>
+            </tr>
+
+
+
+        </table>
+    </div>
+
+
+</form>

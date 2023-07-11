@@ -18,8 +18,8 @@ export class AppComponent implements OnInit, OnDestroy {
   c = false;//green village frontend
   d = true; // starting page nav bar
   e = true;//nec logo
-  error=false;//login form invalid credentials
-  
+  error = false;//login form invalid credentials
+
   title = 'greenvillage';
 
   signin() {
@@ -34,6 +34,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.e = false;
     this.b = true;
 
+  }
+  logout() {
+    this.a = false;
+    this.b = false;
+    this.e = true;
+    this.c = false;
+    this.d = true;
   }
   signup: Signupinterface = {
     name: '',
@@ -73,19 +80,19 @@ export class AppComponent implements OnInit, OnDestroy {
         this.readarray = data.Result[0];
         console.log(this.readarray);
         if (data.Result[0]) {
-          if(this.readarray[1]==this.loginform.password){
-          this.a = false;
-          this.b = false;
-          this.e = false;
-          this.c = true;
-          this.d = false;
+          if (this.readarray[1] == this.loginform.password) {
+            this.a = false;
+            this.b = false;
+            this.e = false;
+            this.c = true;
+            this.d = false;
           }
-          else{
-            this.error=true;
+          else {
+            this.error = true;
           }
         }
         else {
-          this.error=true;
+          this.error = true;
 
         }
       })

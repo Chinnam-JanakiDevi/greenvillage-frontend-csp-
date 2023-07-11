@@ -2,7 +2,7 @@
 <div *ngIf="d">
     <nav class="navbar navbar-expand-sm">
         <ul class="navbar-nav ms-auto">
-            <li><button type="button" class="btn btn-danger" (click)="login()">Sign In</button></li>
+            <li><button type="button" class="btn btn-danger" (click)="login()">Sign Up</button></li>
             <li><button type="button" class="btn btn-warning" (click)="signin()">Login</button></li>
             <!-- <li class="nav-item" style="font-size: 30px;color: aliceblue;"><a class="nav-link" href="#"
                     (click)="login()">
@@ -187,7 +187,7 @@
 
         <div class="main-search-input-wrap ms-auto p-1">
             <div class="main-search-input">
-                <button class="btn btn-danger"  routerLink="/contactus" routerLinkActive="active">Contact Us</button>
+                <button class="btn btn-danger"  routerLink="/contactus" routerLinkActive="active" (click)="logout()">log out</button>
             </div>
         </div>
     </div>
@@ -197,7 +197,7 @@
         <div class="row border p-3" style="font-size: x-large;" id="topnav">
             <div class="col"><a class="navbar-brand activity" routerLink="/home" routerLinkActive="active">Home</a>
             </div>
-            <div class="col"><a class="navbar-brand" href="#">About</a></div>
+            <div class="col"><a class="navbar-brand" href="#" routerLink="photos" routerLinkActive="active">About Us</a></div>
             <div class="col">
                 <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">PlantTypes</a>
 
@@ -268,7 +268,8 @@
                                     routerLinkActive="active">Impact</a>
                                 <a href="" class="list-group-item list-group-item-action" routerLink="/timeline"
                                     routerLinkActive="active">TimeLine</a>
-                                <a href="" class="list-group-item list-group-item-action">photos</a>
+                                <a href="" class="list-group-item list-group-item-action" routerLink="/photos"
+                                routerLinkActive="active">photos</a>
 
                             </div>
                         </div>

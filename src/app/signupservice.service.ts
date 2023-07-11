@@ -25,9 +25,7 @@ export class SignupserviceService {
     );
   }
 
-  Read(email: String): Observable<Read> {
-    return this.http.get<Read>(`${this.url}login/Read${email}`);
-  }
+ 
   Insert1(
     Details: sellplant
   ): Observable<InsertedSuccess | UniqueConstraintError> {
@@ -47,5 +45,21 @@ export class SignupserviceService {
     );
 
   }
-
+  Read(email: String): Observable<Read> {
+    return this.http.get<Read>(`${this.url}login/Read${email}`);
+  }
+  Read1(p_id: String): Observable<Read> {
+    return this.http.get<Read>(`${this.url}sellplant/Read${p_id}`);
+  }
+  Update(p_id:String, Details:sellplant) {
+    return this.http.put(`${this.url}sellplant/Update${p_id}`, Details, {
+      headers: this.headers,
+    });
+  }
+  Delete(p_id: String): Observable<InsertedSuccess> {
+    console.log(`${this.url}sellplant/Delete${p_id}`);
+    return this.http.delete<InsertedSuccess>(
+      `${this.url}sellplant/Delete${p_id}`
+    );
+  }
 }
