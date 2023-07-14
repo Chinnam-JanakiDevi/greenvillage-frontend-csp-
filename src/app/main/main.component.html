@@ -1,0 +1,88 @@
+<div class="d-block mx-auto w-50">
+    <!-- <label for="coursename">Plant ID</label>
+    <input type="text" name="coursename" id="coursename" class="form-control" [(ngModel)]="UpdatedUser.p_id"> -->
+    <div class="d-flex my-2">
+        <input type="submit" value="Get all" class="btn btn-primary" (click)="Read('All')">
+        <!-- <input type="submit" [value]="'Get '+ UpdatedUser.p_id" class="btn btn-primary mx-1"
+            (click)="Read(UpdatedUser.p_id)"> -->
+    </div>
+    <!-- <p *ngIf="!(Results.length==0 && !GotResult)" class="text-danger">No Result to Show</p> -->
+</div>
+<table class="table w-50  mx-auto" *ngIf="Results.length!=0 && GotResult">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">plant ID</th>
+            <th scope="col">plant image</th>
+            <th scope="col">plant Name</th>
+            <th scope="col">plant type</th>
+            <th scope="col">plant cost</th>
+            <th scope="col">Read</th>
+            <th scope="col">Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Data of Results">
+            <th scope="row">{{Data[0]}}</th>
+            <th>{{Data[1]}}</th>
+            <th>{{Data[2]}}</th>
+            <th>{{Data[3]}}</th>
+            <th>{{Data[4]}}</th>
+            <td><input type="button" role="button" class="btn btn-danger" value="Read" data-bs-toggle="modal" data-bs-target="#example1Modal" (click)="Read(Data[0][0])">
+            </td>
+            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    (click)="Read1( Data[0])">
+                    Update
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Values</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" name="p_id" placeholder="coursename" class="form-control my-1"
+                    [(ngModel)]="UpdatedUser.p_id">
+                <input type="text" name="plant image" id="duration" placeholder="duration" class="form-control my-1"
+                    [(ngModel)]="UpdatedUser.p_image">
+                <input type="text" name="name" id="elgibility" placeholder="elgibility" class="form-control my-1"
+                    [(ngModel)]="UpdatedUser.p_name">
+                <input type="text" name="type" id="coursename" placeholder="fee" class="form-control my-1"
+                    [(ngModel)]="UpdatedUser.p_type">
+                <input type="text" name="cost" id="coursename" placeholder="fee" class="form-control my-1"
+                    [(ngModel)]="UpdatedUser.p_cost">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="Update(UpdatedUser.p_id,UpdatedUser)">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="example1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Values</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3>plant ID    :{{this.Results[0][0]}}</h3>
+                <h3>plant image :{{this.Results[0][1]}}</h3>
+                <h3>plant name  :{{this.Results[0][2]}}</h3>
+                <h3>plant type  :{{this.Results[0][3]}}</h3>
+                <h3>plant cost  :{{this.Results[0][4]}}</h3>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="Update(UpdatedUser.p_id,UpdatedUser)">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,6 +4,7 @@ import { Signupinterface, UniqueConstraintError, InsertedSuccess, Read, logins }
 import { SignupserviceService } from './signupservice.service';
 import { Subscription } from 'rxjs';
 import { Logininterface } from './logininterface';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Logininterface } from './logininterface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  constructor(private service: SignupserviceService) { }
+  constructor(private service: SignupserviceService,private Router:Router) { }
   a = false; //login page
   b = false;//registration page
   c = false;//green village frontend
@@ -80,12 +81,13 @@ export class AppComponent implements OnInit, OnDestroy {
         this.readarray = data.Result[0];
         console.log(this.readarray);
         if (data.Result[0]) {
-          if (this.readarray[1] == this.loginform.password) {
+          if (this.readarray[2] == this.loginform.password) {
             this.a = false;
             this.b = false;
             this.e = false;
             this.c = true;
             this.d = false;
+           this. Router.navigate(['/home']);
           }
           else {
             this.error = true;

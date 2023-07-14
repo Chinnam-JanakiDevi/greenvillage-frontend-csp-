@@ -11,6 +11,8 @@ import { ImpactComponent } from './impact/impact.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { SellplantComponent } from './sellplant/sellplant.component';
 import { PhotosComponent } from './photos/photos.component';
+import { NonflplantsComponent } from './nonflplants/nonflplants.component';
+import { MainComponent } from './main/main.component';
 // import { flatMap } from 'rxjs';
 
 const routes: Routes = [
@@ -24,7 +26,10 @@ const routes: Routes = [
   {path:'impact',component:ImpactComponent},
   {path:'timeline',component:TimelineComponent},
   {path:'sellplant',component:SellplantComponent},
-  {path:'photos',component:PhotosComponent}
+  {path:'photos',component:PhotosComponent},
+  {path:'nonflplants',component:NonflplantsComponent},
+  {path:'main',component:MainComponent}
+
 ];
 
 @NgModule({
@@ -43,6 +48,8 @@ export class AppRoutingModule { }
     TimelineComponent,
     ImpactComponent,
     SellplantComponent,
-    PhotosComponent
+    PhotosComponent,
+    NonflplantsComponent,
+    MainComponent
   ]
 

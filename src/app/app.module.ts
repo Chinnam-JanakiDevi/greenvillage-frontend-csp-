@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SellplantComponent } from './sellplant/sellplant.component';
 import { PhotosComponent } from './photos/photos.component';
+import { MainComponent } from './main/main.component';
+import { NonflplantsComponent } from './nonflplants/nonflplants.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { PhotosComponent } from './photos/photos.component';
     ImpactComponent,
     SellplantComponent,
     PhotosComponent,
+    MainComponent,
+    NonflplantsComponent,
    
   ],
   imports: [

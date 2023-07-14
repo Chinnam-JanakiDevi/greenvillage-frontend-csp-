@@ -62,4 +62,8 @@ export class SignupserviceService {
       `${this.url}sellplant/Delete${p_id}`
     );
   }
+  Read2(season:string):Observable<Read>{
+    return this.http.get<Read>(`${this.url}example/Read${season}`);
+
+  }
 }

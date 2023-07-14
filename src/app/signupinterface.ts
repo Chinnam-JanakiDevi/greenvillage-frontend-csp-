@@ -35,3 +35,9 @@ export interface InsertedSuccess {
 export interface Read {
     Result: [];
 }
+export interface nonfliplantsnterface{
+    id:number,
+    url:string,
+    names:string,
+    season:string
+}
