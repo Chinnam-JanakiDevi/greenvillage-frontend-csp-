@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
   a = false; //login page
   b = false;//registration page
   c = false;//green village frontend
-  d = true; // starting page nav bar
+  d = false; // starting page nav bar
   e = true;//nec logo
   error = false;//login form invalid credentials
 
@@ -28,12 +28,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.b = false;
     this.e = false;
     this.a = true;
+    this.d=true;
   }
   login() {
     // this.d=true;
     this.a = false;
     this.e = false;
     this.b = true;
+    this.d=true
 
   }
   logout() {
@@ -41,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.b = false;
     this.e = true;
     this.c = false;
-    this.d = true;
+    this.d = false;
   }
   signup: Signupinterface = {
     name: '',
@@ -50,7 +52,8 @@ export class AppComponent implements OnInit, OnDestroy {
   };
   loginform: Logininterface = {
     email: '',
-    password: ''
+    password: '',
+    name:'',
   }
 
   readarray = [];
@@ -68,9 +71,11 @@ export class AppComponent implements OnInit, OnDestroy {
           this.ErrorMsg = `${this.signup.email} alredy Exists`;
         } else {
           this.SuccessMsg = `${this.signup.email} Inserted Succesfully`;
-          Form.reset();
+          this.a=true;
+          this.b=false
         }
-
+        Form.reset();
+        
       }
     }
     )

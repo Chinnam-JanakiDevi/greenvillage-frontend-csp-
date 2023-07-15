@@ -18,6 +18,8 @@
             <th scope="col">plant cost</th>
             <th scope="col">Read</th>
             <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+
         </tr>
     </thead>
     <tbody>
@@ -27,11 +29,16 @@
             <th>{{Data[2]}}</th>
             <th>{{Data[3]}}</th>
             <th>{{Data[4]}}</th>
-            <td><input type="button" role="button" class="btn btn-danger" value="Read" data-bs-toggle="modal" data-bs-target="#example1Modal" (click)="Read(Data[0][0])">
+            <td><input type="button" role="button" class="btn btn-danger" value="Read" data-bs-toggle="modal"
+                    data-bs-target="#example1Modal" (click)="Read(Data[0][0])">
             </td>
             <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     (click)="Read1( Data[0])">
                     Update
+                </button>
+            </td>
+            <td><button type="button" class="btn btn-primary" (click)="Delete( Data[0])">
+                    Delete
                 </button>
             </td>
         </tr>
@@ -64,7 +71,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="example1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="example1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -85,4 +92,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

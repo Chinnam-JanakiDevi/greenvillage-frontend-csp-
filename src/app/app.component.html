@@ -3,17 +3,48 @@
     <nav class="navbar navbar-expand-sm">
         <ul class="navbar-nav ms-auto">
             <li><button type="button" class="btn btn-danger" (click)="login()">Sign Up</button></li>
+            &nbsp;
             <li><button type="button" class="btn btn-warning" (click)="signin()">Login</button></li>
-            <!-- <li class="nav-item" style="font-size: 30px;color: aliceblue;"><a class="nav-link" href="#"
-                    (click)="login()">
-                    sign up</a></li>
-            <li class="nav-item" style="font-size: 30px;color: white"><a class="nav-link" href="#"
-                    (click)="signin()">Login</a></li> -->
+
         </ul>
     </nav>
 </div>
 <!-- nec logo -->
-<div *ngIf="e">
+<div id="header" *ngIf="e">
+    <div>
+
+        <div class="navbar navbar-expand-sm">
+            <ul class="navbar-nav ms-auto">
+                <li><button type="button" class="btn btn-danger" (click)="login()">Sign Up</button></li>
+                &nbsp;
+                <li><button type="button" class="btn btn-warning" (click)="signin()">Login</button></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+    <div>
+        <div class="container" style="margin-top: 60px;">
+            <div class="d-flex justify-content-center">
+                <h1 style="color: rgb(198, 226, 43);"> NARASARAOPETA ENGINEERING COLLEGE</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <h1 style="color: rgb(198, 226, 43);">DEPARTMENT OF CSE</h1>
+            </div>
+            <div class="d-flex justify-content-center" style="color: blueviolet;"> <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCsL17zr_9OTkI6lSkbqsKcaSuovTaHUQ2uPvH-Hs6XXenPyEXToeAc1Yepkl0q80HcZw&usqp=CAU">
+            </div>
+            <div class="d-flex justify-content-center" style="color: blueviolet;">
+                <h2 style="color: rgb(208, 226, 43);">COMMUNITY SERVICE PROJECT</h2>
+            </div>
+            <div class="d-flex justify-content-center">
+                <h2 style="color: rgb(248, 252, 8);">AWARENESS OF PLANTATION</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div *ngIf="e">
     <div class="container" style="margin-top: 60px;">
         <div class="d-flex justify-content-center">
             <h1>NARASARAOPETA ENGINEERING COLLEGE</h1>
@@ -31,7 +62,7 @@
             <h2>AWARENESS OF PLANTATION</h2>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Login page -->
 <div *ngIf="a">
     <div style="font-size: xx-large;color: red;" *ngIf="error"> Invalid Credentials</div>
@@ -186,13 +217,15 @@
 
         <!-- <div class="main-search-input-wrap ms-auto p-1"> -->
         <!-- <div class="main-search-input"> -->
-        <div class="dropdown show ms-auto my-2 my-sm-0" >
-            <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" style="color: whitesmoke"><span style="font-size: large; color: whitesmoke">Welcome <span style="font-size: larger;color: coral;">{{this.readarray[0]}}</span></span></a>
+        <div class="dropdown show ms-auto my-2 my-sm-0">
+            <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
+                style="color: whitesmoke;font-weight: bolder;"><span style="font-size: large; color: whitesmoke">Welcome
+                    <span style="font-size: larger;color: coral;">{{this.readarray[0]}}</span></span></a>
 
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" (click)="logout()">log out</a>
-                
+
             </div>
         </div>
         <!-- </div> -->
@@ -200,95 +233,106 @@
     </div>
 
 
-<div class="container-fluid text-center ">
+    <div class="container-fluid text-center ">
 
-    <div class="row border p-3" style="font-size: x-large;" id="topnav">
-        <div class="col"><a class="navbar-brand activity" routerLink="/home" routerLinkActive="active">Home</a>
-        </div>
-        <div class="col"><a class="navbar-brand" href="#" routerLink="photos" routerLinkActive="active">About Us</a>
-        </div>
-        <div class="col">
-            <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">PlantTypes</a>
-
-            <div class="dropdown-menu w-90 mt-0" aria-labelledby="navbarDropdown">
-
-                <div class="container">
-                    <div class="row my-3">
-                        <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
-                            <div class="list-group list-group-flush">
-                                <div> <a routerLink="/flplants" routerLinkActive="active"
-                                        class="list-group-item list-group-item-action">Flowering Plants</a></div>
-                                <div> <a routerLink="/nonflplants" routerLinkActive="active"
-                                        class="list-group-item list-group-item-action">Non Flowering Plants</a>
+        <div class="row border p-3" style="font-size: x-large;" id="topnav">
+            <div class="col"><a class="navbar-brand activity" routerLink="/home" routerLinkActive="active">Home</a>
+            </div>
+            <div class="col"><a class="navbar-brand" href="#" routerLink="photos" routerLinkActive="active">About Us</a>
+            </div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">PlantTypes</a>
+                <div class="dropdown-menu w-200" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <div class="row my-6">
+                            <div class="col-md-6 col-lg-8 mb-6 mb-lg-0">
+                                <div class="list-group list-group-flush">
+                                    <div> <a routerLink="/flplants" routerLinkActive="active"
+                                            class="list-group-item list-group-item-action">Flowering Plants</a></div>
+                                    <div> <a routerLink="/nonflplants" routerLinkActive="active"
+                                            class="list-group-item list-group-item-action">Non Flowering Plants</a>
+                                    </div>
+                                    <a href="" class="list-group-item list-group-item-action">Ferns</a>
+                                    <a href="" class="list-group-item list-group-item-action">Mosses</a>
+                                    <a href="" class="list-group-item list-group-item-action">Algae</a>
                                 </div>
-                                <a href="" class="list-group-item list-group-item-action">Ferns</a>
-                                <a href="" class="list-group-item list-group-item-action">Mosses</a>
-                                <a href="" class="list-group-item list-group-item-action">Algae</a>
+                            </div>
+                            <div class="col-md-6 col-lg-8 mb-6 mb-lg-0">
+                                <div class="list-group list-group-flush">
+                                    <a href="" class="list-group-item list-group-item-action">Cacti and Succulents</a>
+                                    <a href="" class="list-group-item list-group-item-action">Bulbs</a>
+                                    <a href="" class="list-group-item list-group-item-action">Carnivorous Plants</a>
+                                    <a href="" class="list-group-item list-group-item-action">Aquatic Plants</a>
+                                    <a href="" class="list-group-item list-group-item-action">Trees</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Seasonaly</a>
+                <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
+
+                    <div class="container">
+                        <div class="row my-3">
+
                             <div class="list-group list-group-flush">
-                                <a href="" class="list-group-item list-group-item-action">Cacti and Succulents</a>
-                                <a href="" class="list-group-item list-group-item-action">Bulbs</a>
-                                <a href="" class="list-group-item list-group-item-action">Carnivorous Plants</a>
-                                <a href="" class="list-group-item list-group-item-action">Aquatic Plants</a>
-                                <a href="" class="list-group-item list-group-item-action">Trees</a>
+                                <a routerLink="/summer" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Summer</a>
+                                <a routerLink="/winter" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Winter</a>
+                                <a routerLink="/spring" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Spring</a>
+                                <a routerLink="/autumn" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Autumn</a>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Seasonaly</a>
-            <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Sell Plant</a>
+                <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
 
-                <div class="container">
-                    <div class="row my-3">
+                    <div class="container">
+                        <div class="row my-3">
 
-                        <div class="list-group list-group-flush">
-                            <a routerLink="/summer" routerLinkActive="active"
-                                class="list-group-item list-group-item-action">Summer</a>
-                            <a routerLink="/winter" routerLinkActive="active"
-                                class="list-group-item list-group-item-action">Winter</a>
-                            <a routerLink="/spring" routerLinkActive="active"
-                                class="list-group-item list-group-item-action">Spring</a>
-                            <a routerLink="/autumn" routerLinkActive="active"
-                                class="list-group-item list-group-item-action">Autumn</a>
+                            <div class="list-group list-group-flush">
+                                <a routerLink="/sellplant" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">sell here</a>
+                                <a routerLink="/main" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">view sold plants</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col"><a class="navbar-brand" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+            </div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Village</a>
+                <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
+
+                    <div class="container">
+                        <div class="row my-3">
+
+                            <div class="list-group list-group-flush">
+                                <a href="" class="list-group-item list-group-item-action" routerLink="/impact"
+                                    routerLinkActive="active">Impact</a>
+                                <a href="" class="list-group-item list-group-item-action" routerLink="/timeline"
+                                    routerLinkActive="active">TimeLine</a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col"><a class="navbar-brand" routerLink="/sellplant" routerLinkActive="active">Sell Plant</a>
-        </div>
 
-        <div class="col"><a class="navbar-brand" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
-        </div>
-        <div class="col">
-            <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Village</a>
-            <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
-
-                <div class="container">
-                    <div class="row my-3">
-
-                        <div class="list-group list-group-flush">
-                            <a href="" class="list-group-item list-group-item-action" routerLink="/impact"
-                                routerLinkActive="active">Impact</a>
-                            <a href="" class="list-group-item list-group-item-action" routerLink="/timeline"
-                                routerLinkActive="active">TimeLine</a>
-                            <a href="" class="list-group-item list-group-item-action" routerLink="/main"
-                                routerLinkActive="active">photos</a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
-</div>
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>

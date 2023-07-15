@@ -55,7 +55,7 @@ export class MainComponent implements OnInit {
         this.Results = Data.Result;
         this.GotResult = true;
         console.log(this.Results);
-        
+
       },
       error: (Err) => {
         console.log(Err);
@@ -74,5 +74,15 @@ export class MainComponent implements OnInit {
       },
     });
   }
-
+  Delete(p_id: String) {
+    this.Service.Delete(p_id).subscribe({
+      next: (Data: InsertedSuccess) => {
+        console.log(Data.rowsAffected);
+        this.Read('All');
+      },
+      error: (Error: any) => {
+        console.log(Error);
+      },
+    });
+  }
 }

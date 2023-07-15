@@ -1,6 +1,7 @@
 export interface Logininterface {
     email:string,
-    password:string
+    password:string,
+    name:string
 }
 export interface UniqueConstraintError {
     errorNum: Number;
