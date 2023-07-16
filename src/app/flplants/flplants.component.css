@@ -1,0 +1,15 @@
+table, th, td {
+    border: 2px solid rgb(62, 125, 241);
+    border-collapse: collapse;
+    font-weight: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  /* table{
+    margin-left:410px;
+  } */
+  /* td{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;  
+    padding-bottom:5px;
+  } */

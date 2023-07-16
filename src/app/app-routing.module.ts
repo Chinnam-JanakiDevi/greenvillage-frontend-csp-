@@ -13,6 +13,8 @@ import { SellplantComponent } from './sellplant/sellplant.component';
 import { PhotosComponent } from './photos/photos.component';
 import { NonflplantsComponent } from './nonflplants/nonflplants.component';
 import { MainComponent } from './main/main.component';
+import { OrderformComponent } from './orderform/orderform.component';
+import { FormComponent } from './form/form.component';
 // import { flatMap } from 'rxjs';
 
 const routes: Routes = [
@@ -28,7 +30,11 @@ const routes: Routes = [
   {path:'sellplant',component:SellplantComponent},
   {path:'photos',component:PhotosComponent},
   {path:'nonflplants',component:NonflplantsComponent},
-  {path:'main',component:MainComponent}
+  {path:'main',component:MainComponent},
+  {path:'orderform',component:OrderformComponent},
+  {path:'form',component:FormComponent}
+
+
 
 ];
 
@@ -50,6 +56,8 @@ export class AppRoutingModule { }
     SellplantComponent,
     PhotosComponent,
     NonflplantsComponent,
-    MainComponent
+    MainComponent,
+    OrderformComponent,
+    FormComponent
   ]
 

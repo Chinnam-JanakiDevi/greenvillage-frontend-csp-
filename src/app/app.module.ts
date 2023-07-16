@@ -19,6 +19,8 @@ import { SellplantComponent } from './sellplant/sellplant.component';
 import { PhotosComponent } from './photos/photos.component';
 import { MainComponent } from './main/main.component';
 import { NonflplantsComponent } from './nonflplants/nonflplants.component';
+import { OrderformComponent } from './orderform/orderform.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { NonflplantsComponent } from './nonflplants/nonflplants.component';
     PhotosComponent,
     MainComponent,
     NonflplantsComponent,
+    OrderformComponent,
+    FormComponent,
    
   ],
   imports: [

@@ -65,4 +65,7 @@ export class SignupserviceService {
   Read2(season:string):Observable<Read>{  
     return this.http.get<Read>(`${this.url}example/Read${season}`);
   }
+  Read3(plant_name: String): Observable<Read> {
+    return this.http.get<Read>(`${this.url}info/Read${plant_name}`);
+  }
 }

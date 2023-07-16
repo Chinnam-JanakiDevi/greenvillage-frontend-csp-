@@ -21,7 +21,8 @@
             </ul>
             <div class="card-body">
                 <!-- <button><a href="#" class="card-link navbar-brand">More Info</a> </button> -->
-                <button class="btn btn-danger" data-toggle="modal" data-target="#more">More</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#more" name="Rose" (click)="Read('Rose')">More</button>&nbsp;
+                <button class="btn btn-danger" data-toggle="modal" data-target="#more" routerLink="/form" routerLinkActive="active">Order</button>
 
             </div>
         </div>
@@ -311,7 +312,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <p><b style="font-size: x-large;color: blueviolet;"> Soil water:</b> content was kept at field
+                    <!-- <p><b style="font-size: x-large;color: blueviolet;"> Soil water:</b> content was kept at field
                         capacity by daily waterings as
                         determined by tensiometer readings.</p>
                     <p><b style="font-size: x-large;color: blueviolet;"> Watering:</b> content was kept at field
@@ -320,7 +321,46 @@
                     <p><b style="font-size: x-large;color: blueviolet;"> Fertilizer:</b> content was kept at field
                         capacity by daily waterings as
                         determined by tensiometer readings.</p>
-                </div>
+                </div> -->
+                <table>
+                    <!-- <tr>
+                      <th colspan="10" style="text-align: center;">
+                        <h1 style="text-align: center;font-size: x-large;color:blue;">More Info</h1>
+                      </th>
+                    </tr> -->
+                    <tr>
+                      <td colspan="4">Soil Type</td>
+                      <td colspan="6">{{info.soil_type}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Fertilizer</td>
+                      <td colspan="6">{{info.fertilizer}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Height</td>
+                      <td colspan="6">{{info.height}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">PH Range</td>
+                      <td colspan="6">{{info.ph_range}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Sunlight</td>
+                      <td colspan="6">{{info.sunlight}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Watering</td>
+                      <td colspan="6">{{info.watering}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">oxygen level</td>
+                      <td colspan="6">{{info.oxygen_level}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">imgage url</td>
+                      <td colspan="6">{{info.img_url}}</td>
+                    </tr>
+                  </table>
             </div>
             <div class="modal-footer">
 
