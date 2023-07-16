@@ -1,6 +1,6 @@
 import { Component,OnInit,OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { nonfliplantsnterface } from '../signupinterface';
+import { nonfliplantsnterface,Infointerface } from '../signupinterface';
 import { SignupserviceService } from '../signupservice.service';
 @Component({
   selector: 'app-nonflplants',
@@ -11,22 +11,33 @@ export class NonflplantsComponent implements OnInit{
   ngOnInit(): void {}
   constructor(private service:SignupserviceService){}
   Subscription:Subscription=new Subscription();
-  a:any[]=[];
+  a1:any[]=[];
   show=true;
-  seasons:string='summer';
+ a=[];
   flower:nonfliplantsnterface={
-    id:0,
-    url:'',
-    names:'',
-    season:'',
+    p_id:'',
+    p_image:'',
+    p_name:'',
+    p_type:'',
+    p_cost:0
   }
-  url="https://www.thespruce.com/thmb/0QHDmutjh9OcQ-V4sHuUjRhPWo0=/6720x0/filters:no_upscale():max_bytes(150000):strip_icc()/tiny-flowers-1315816-02-ffd9607c255d482cb14838988fb5093f.jpg";
+  info: Infointerface = {
+    plant_name: '',
+    soil_type:'',
+    ph_range:'',
+    sunlight:'',
+    watering:'',
+    fertilizer:'',
+    height:'',
+    oxygen_level:'',
+    img_url:''
+  };
   Read(){
-    this.Subscription=this.service.Read2(this.seasons).subscribe(
+    this.Subscription=this.service.Read2('flower').subscribe(
       (Data:any)=>{
         if(Data){
           console.log(Data);
-          this.a = Data.Result;
+          this.a1= Data.Result;
           this.show=true;
         }
         else{
@@ -34,6 +45,35 @@ export class NonflplantsComponent implements OnInit{
           
         }
     }
+    )
+  }
+  Read1(a:string) { 
+    this.Subscription = this.service.Read3(a).subscribe(
+      (data:any)=>{
+        if(data){
+          
+          console.log(data);
+          console.log(data.Result);
+          this.a=data.Result[0];
+          console.log(this.a);
+          // this.canShowData=true;
+          this.info = {
+            
+            soil_type:this.a[0],
+            ph_range:this.a[1],
+            sunlight:this.a[2],
+            watering:this.a[3],
+            fertilizer:this.a[4],
+            height:this.a[5],
+            plant_name: this.a[6],
+            oxygen_level:this.a[7],
+            img_url:this.a[8]
+          }
+        }
+        else{
+          console.log("Failed");
+        }
+      }
     )
   }
   OnDestroy(): void {

@@ -36,10 +36,11 @@ export interface Read {
     Result: [];
 }
 export interface nonfliplantsnterface{
-    id:number,
-    url:string,
-    names:string,
-    season:string
+    p_id:string,
+    p_image:string,
+    p_name:string,
+    p_type:string,
+    p_cost:number
 }
 export interface Infointerface {
     plant_name: string;

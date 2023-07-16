@@ -8,3 +8,10 @@
     flex-basis: calc(33.33% - 1rem); /* Adjust the percentage to control the card width */
     margin-bottom: 1rem;
 }
+
+table, th, td {
+    border: 2px solid rgb(62, 125, 241);
+    border-collapse: collapse;
+    font-weight: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }

@@ -1,15 +1,74 @@
 <button class="btn btn-danger m-2" (click)="Read()">Flowers</button>
 <div *ngIf="show">
-    <div *ngIf="!(a.length==0)" class="grid-container">
-        <div *ngFor="let Eachflower of a">
+    <div *ngIf="!(a1.length==0)" class="grid-container">
+        <div *ngFor="let Eachflower of a1">
             <div class="card" style="width: 18rem;">
-                <img [src]="url" alt="Image">
+                <img [src]="Eachflower[1]" alt="Image" width="287" height="200">
                 <div class="card-body">
-                    <h5 class="card-title">{{Eachflower[0]}},{{Eachflower[1]}}</h5>
-                    <p class="card-text">{{Eachflower[2]}}</p>
-                    <p class="card-text">{{Eachflower[3]}}</p>
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
+                    <h5 class="card-title">ID :{{Eachflower[0]}}</h5>
+                    <p class="card-text">Name:{{Eachflower[2]}}</p>
+                    <p class="card-text">Type:{{Eachflower[3]}}</p>
+                    <p class="card-text">Cost{{Eachflower[4]}}</p>
+
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#more" (click)="Read1(Eachflower[2])">More</button>&nbsp;
+                    <button class="btn btn-danger"  routerLink="/form" routerLinkActive="active">Order</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="more">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="w-200 text-center mt-2"
+                    style="color: blueviolet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    MoreInfo</h3>
+                <button class="btn btn-danger" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    
+                <table>
+                   
+                    <tr>
+                      <td colspan="4">Soil Type</td>
+                      <td colspan="6">{{info.soil_type}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Fertilizer</td>
+                      <td colspan="6">{{info.fertilizer}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Height</td>
+                      <td colspan="6">{{info.height}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">PH Range</td>
+                      <td colspan="6">{{info.ph_range}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Sunlight</td>
+                      <td colspan="6">{{info.sunlight}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Watering</td>
+                      <td colspan="6">{{info.watering}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">oxygen level</td>
+                      <td colspan="6">{{info.oxygen_level}}</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">imgage url</td>
+                      <td colspan="6">{{info.img_url}}</td>
+                    </tr>
+                  </table>
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn btn-success" data-dismiss="modal">Ok</button>
             </div>
         </div>
     </div>
