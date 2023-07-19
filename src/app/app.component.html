@@ -224,8 +224,8 @@
 
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item">Profile</a>
                 <a class="dropdown-item" (click)="logout()">log out</a>
-
             </div>
         </div>
         <!-- </div> -->
@@ -242,28 +242,36 @@
             </div>
             <div class="col">
                 <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">PlantTypes</a>
-                <div class="dropdown-menu w-200" aria-labelledby="navbarDropdown">
-                    <div class="container">
-                        <div class="row my-6">
-                            <div class="col-md-6 col-lg-8 mb-6 mb-lg-0">
-                                <div class="list-group list-group-flush">
+                <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                    <div class="container w-300">
+                        <div class="row">
+                            <div class="col">
+                                <div class="list-group ">
                                     <div> <a routerLink="/flplants" routerLinkActive="active"
                                             class="list-group-item list-group-item-action">Flowering Plants</a></div>
-                                    <div> <a routerLink="/nonflplants" routerLinkActive="active"
+                                    <div> <a routerLink="/flplants" routerLinkActive="active"
                                             class="list-group-item list-group-item-action">Non Flowering Plants</a>
                                     </div>
-                                    <a href="" class="list-group-item list-group-item-action">Ferns</a>
-                                    <a href="" class="list-group-item list-group-item-action">Mosses</a>
-                                    <a href="" class="list-group-item list-group-item-action">Algae</a>
+                                    <div><a routerLink="/flplants" routerLinkActive="active"
+                                            class="list-group-item list-group-item-action">Ferns</a></div>
+                                    <div><a routerLink="/flplants" routerLinkActive="active"
+                                            class="list-group-item list-group-item-action">Mosses</a></div>
+                                    <div><a routerLink="/flplants" routerLinkActive="active"
+                                            class="list-group-item list-group-item-action">Algae</a></div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-8 mb-6 mb-lg-0">
+                            <div class="col">
                                 <div class="list-group list-group-flush">
-                                    <a href="" class="list-group-item list-group-item-action">Cacti and Succulents</a>
-                                    <a href="" class="list-group-item list-group-item-action">Bulbs</a>
-                                    <a href="" class="list-group-item list-group-item-action">Carnivorous Plants</a>
-                                    <a href="" class="list-group-item list-group-item-action">Aquatic Plants</a>
-                                    <a href="" class="list-group-item list-group-item-action">Trees</a>
+                                    <a routerLink="/flplants" routerLinkActive="active"
+                                        class="list-group-item list-group-item-action">Cacti and Succulents</a>
+                                    <a routerLink="/flplants" routerLinkActive="active"
+                                        class="list-group-item list-group-item-action">Bulbs</a>
+                                    <a routerLink="/flplants" routerLinkActive="active"
+                                        class="list-group-item list-group-item-action">Carnivorous Plants</a>
+                                    <a routerLink="/flplants" routerLinkActive="active"
+                                        class="list-group-item list-group-item-action">Aquatic Plants</a>
+                                    <a routerLink="/flplants" routerLinkActive="active"
+                                        class="list-group-item list-group-item-action">Trees</a>
                                 </div>
                             </div>
                         </div>
@@ -293,13 +301,15 @@
                 </div>
             </div>
             <div class="col">
-                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Sell Plant</a>
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Buy or Sell Plant</a>
                 <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
 
                     <div class="container">
                         <div class="row my-3">
 
                             <div class="list-group list-group-flush">
+                                <a routerLink="/nonflplants" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Buy here</a>
                                 <a routerLink="/sellplant" routerLinkActive="active"
                                     class="list-group-item list-group-item-action">sell here</a>
                                 <a routerLink="/main" routerLinkActive="active"

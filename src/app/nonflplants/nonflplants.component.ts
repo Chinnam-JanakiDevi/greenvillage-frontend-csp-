@@ -12,8 +12,9 @@ export class NonflplantsComponent implements OnInit{
   constructor(private service:SignupserviceService){}
   Subscription:Subscription=new Subscription();
   a1:any[]=[];
-  show=true;
+  show=false;
  a=[];
+ canshow=true;
   flower:nonfliplantsnterface={
     p_id:'',
     p_image:'',
@@ -39,10 +40,10 @@ export class NonflplantsComponent implements OnInit{
           console.log(Data);
           this.a1= Data.Result;
           this.show=true;
+          this.canshow=false;
         }
         else{
           console.log("error");
-          
         }
     }
     )
@@ -76,7 +77,12 @@ export class NonflplantsComponent implements OnInit{
       }
     )
   }
+  back(){
+    this.canshow=true;
+    this.show=false;
+  }
   OnDestroy(): void {
     this.Subscription.unsubscribe();
   }
+
 }

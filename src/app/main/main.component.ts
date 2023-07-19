@@ -63,8 +63,8 @@ export class MainComponent implements OnInit {
     });
   }
 
-  Update(p_id: String, Details: sellplant) {
-    this.Service.Update(p_id, Details).subscribe({
+  Update() {
+    this.Service.Update(this.UpdatedUser.p_id, this.UpdatedUser).subscribe({
       next: (Data) => {
         console.log(Data);
         this.Read('All');

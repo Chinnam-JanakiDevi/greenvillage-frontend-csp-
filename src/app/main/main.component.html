@@ -12,7 +12,7 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col">plant ID</th>
-            <th scope="col">plant image</th>
+            <!-- <th scope="col">plant image</th> -->
             <th scope="col">plant Name</th>
             <th scope="col">plant type</th>
             <th scope="col">plant cost</th>
@@ -25,7 +25,7 @@
     <tbody>
         <tr *ngFor="let Data of Results">
             <th scope="row">{{Data[0]}}</th>
-            <th>{{Data[1]}}</th>
+            <!-- <th>{{Data[1]}}</th> -->
             <th>{{Data[2]}}</th>
             <th>{{Data[3]}}</th>
             <th>{{Data[4]}}</th>
@@ -52,20 +52,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="text" name="p_id" placeholder="coursename" class="form-control my-1"
+                <input type="text" name="p_id" placeholder="p_id" class="form-control my-1"
                     [(ngModel)]="UpdatedUser.p_id">
-                <input type="text" name="plant image" id="duration" placeholder="duration" class="form-control my-1"
+                <input type="text" name="plant image" id="duration" placeholder="p_image" class="form-control my-1"
                     [(ngModel)]="UpdatedUser.p_image">
-                <input type="text" name="name" id="elgibility" placeholder="elgibility" class="form-control my-1"
+                <input type="text" name="name" id="elgibility" placeholder="p_name" class="form-control my-1"
                     [(ngModel)]="UpdatedUser.p_name">
-                <input type="text" name="type" id="coursename" placeholder="fee" class="form-control my-1"
+                <input type="text" name="type" id="coursename" placeholder="p_type" class="form-control my-1"
                     [(ngModel)]="UpdatedUser.p_type">
-                <input type="text" name="cost" id="coursename" placeholder="fee" class="form-control my-1"
+                <input type="text" name="cost" id="coursename" placeholder="p_cost" class="form-control my-1"
                     [(ngModel)]="UpdatedUser.p_cost">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                    (click)="Update(UpdatedUser.p_id,UpdatedUser)">Save changes</button>
+                    (click)="Update()">Save changes</button>
             </div>
         </div>
     </div>
