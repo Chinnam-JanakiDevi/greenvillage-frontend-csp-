@@ -176,17 +176,25 @@
                                             <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="form3Example4c">Password</label>
                                                 <input type="password" id="form3Example4c" name="password"
-                                                    class="form-control" placeholder="Password" ngModel required />
-                                                <div *ngIf="r.controls['password']?.['touched'] && r.controls['password']?.['errors']"
+                                                    class="form-control" placeholder="Password" ngModel required
+                                                    minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$">
+                                                <!-- <div *ngIf="r.controls['password']?.touched && r.controls['password']?.errors"
                                                     class="red">
-                                                    <div *ngIf="r.controls['password']?.['errors']?.['required']">
+                                                    <div *ngIf="r.controls['password']?.errors?.['required']">
                                                         Enter password
+                                                    </div> -->
+                                                    <div *ngIf="r.controls['password']?.errors?.['minlength']" class="red">
+                                                        Password must be at least 8 characters long.
                                                     </div>
-                                                </div>
+                                                    <div *ngIf="r.controls['password']?.errors?.['pattern']" class="red">
+                                                        Password must contain at least one lowercase letter, one
+                                                        uppercase letter, and one number.
+                                                    </div>
+                                                <!-- </div> -->
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-center mx-3 mb-3 mb-lg-1">
-                                            <input class="btn btn-success" type="submit" value="submit"
+                                            <input class="btn btn-success" type="submit" value="Submit"
                                                 [disabled]="r.invalid">
                                         </div>
 
@@ -215,22 +223,43 @@
         <a href="" class="navbar-brand" style="font-size: xx-large;color:yellow">Green Village <span
                 class="bi bi-tree-fill green-color"></span></a>
 
-        <!-- <div class="main-search-input-wrap ms-auto p-1"> -->
-        <!-- <div class="main-search-input"> -->
+        <!-- <div class="main-search-input-wrap ms-auto p-1">
+        <div class="main-search-input">
         <div class="dropdown show ms-auto my-2 my-sm-0">
             <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
                 style="color: whitesmoke;font-weight: bolder;"><span style="font-size: large; color: whitesmoke">Welcome
                     <span style="font-size: larger;color: coral;">{{this.readarray[0]}}</span></span></a>
-
-
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item">Profile</a>
                 <a class="dropdown-item" (click)="logout()">log out</a>
             </div>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
+        </div>
+        </div> -->
+        <div class="main-search-input-wrap ms-auto p-1">
+            <div class="main-search-input fl-wrap">
+                <!-- <button class="btn btn-danger" (click)="logout()">Logout</button> -->
+                <form class="form-inline my-2 my-lg-0" #r="ngForm" (ngSubmit)="Read()">
+                    <input type="text" class="form-control mr-sm-2" name="search" placeholder="Search" ngModel
+                        required />
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="profile-icon" onclick="toggleProfileCard()">{{readarray[0][0]}}</div>
+        <div class="profile-card" id="profileCard">
+            <!-- Your profile card content here -->
+            <h1>Welcome</h1>
+            <h2>{{readarray[0]}}</h2><br>
+            <button class="btn btn-danger"> <a class="dropdown-item" (click)="logout()">log out</a></button>
+
+            <!-- Add more details or elements as needed -->
+        </div>
+
     </div>
+
+
+
 
 
     <div class="container-fluid text-center ">

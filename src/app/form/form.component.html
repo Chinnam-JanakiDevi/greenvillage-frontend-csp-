@@ -1,116 +1,165 @@
-<!-- MultiStep Form -->
-<div class="container-fluid" id="grad1">
-    <div class="row justify-content-center mt-0">
-        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                <h2><strong>Place your Order</strong></h2>
-                <p>Fill all form field to go to next step</p>
-                <div class="row">
-                    <div class="col-md-12 mx-0">
-                        <form id="msform">
-                            <!-- progressbar -->
-                            <ul id="progressbar">
-                                <li class="active" id="account"><strong>Account</strong></li>
-                                <li id="personal"><strong>Personal</strong></li>
-                                <li id="payment"><strong>Payment</strong></li>
-                                <li id="confirm"><strong>Finish</strong></li>
-                            </ul>
-                            <!-- fieldsets -->
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Account Information</h2>
-                                    <input type="text" name="uname" placeholder="UserName"/>
-                                    <input type="email" name="email" placeholder="Email Id"/>
-                                    <input type="password" name="pwd" placeholder="Password"/>
-                                    <!-- <input type="password" name="cpwd" placeholder="Confirm Password"/> -->
+<div class="form-container">
+    <div class="form active" id="form1">
+        <div class="container-fluid px-1 py-4 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <h3
+                        style="color: rgb(239, 27, 27);font-size: large-xx;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        Buy your plant here</h3>
+                    <div class="card">
+                        <h5 class="text-center mb-4" style="color: green;">Enter Your Details</h5>
+                        <form class="form-card">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Name
+                                        <span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="Enter your name" ngModel required name="c_name">
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next Step"/>
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Personal Information</h2>
-                                    <input type="text" name="fname" placeholder="First Name"/>
-                
-                                    <input type="text" name="phno" placeholder="Contact No."/>
-                                    <input type="text" name="plant name" placeholder="plant name"/>
-                                    <input type="number" name="cost" placeholder="cost"/>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Phone Number
+                                        <span class="text-danger">
+                                            *</span></label> <input type="text" placeholder="Enter your Number" ngModel
+                                        required name="p_image"> </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Address
+                                        <span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="Enter Your Address" ngModel required name="p_name">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Plant
+                                        type<span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_type">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">plant Name
+                                        <span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_name">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Plant
+                                        type<span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_type">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button class="back-button btn btn-warning"
+                                        onclick="showForm('form1')">Cancel</button>
+                                </div>
 
+
+                                <div class="col-sm-6">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <button
+                                        class="back-button btn btn-success" onclick="showForm('form2')">Next</button>
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                <input type="button" name="next" class="next action-button" value="Next Step"/>
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title">Payment Information</h2>
-                                    <!-- <div class="radio-group">
-                                        <div class='radio' data-value="credit"><img src="https://i.imgur.com/XzOzVHZ.jpg" width="200px" height="100px"></div>
-                                        <div class='radio' data-value="paypal"><img src="https://i.imgur.com/jXjwZlj.jpg" width="200px" height="100px"></div>
-                                        <br>
-                                    </div>
-                                    <label class="pay">Card Holder Name*</label>
-                                    <input type="text" name="holdername" placeholder=""/>
-                                    <div class="row">
-                                        <div class="col-9">
-                                            <label class="pay">Card Number*</label>
-                                            <input type="text" name="cardno" placeholder=""/>
-                                        </div>
-                                        <div class="col-3">
-                                            <label class="pay">CVC*</label>
-                                            <input type="password" name="cvcpwd" placeholder="***"/>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <label class="pay">Expiry Date*</label>
-                                        </div>
-                                        <div class="col-9">
-                                            <select class="list-dt" id="month" name="expmonth">
-                                                <option selected>Month</option>
-                                                <option>January</option>
-                                                <option>February</option>
-                                                <option>March</option>
-                                                <option>April</option>
-                                                <option>May</option>
-                                                <option>June</option>
-                                                <option>July</option>
-                                                <option>August</option>
-                                                <option>September</option>
-                                                <option>October</option>
-                                                <option>November</option>
-                                                <option>December</option>
-                                            </select>
-                                            <select class="list-dt" id="year" name="expyear">
-                                                <option selected>Year</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
-                                    <div class=" flex justify-content-center" >
-                                        <img src="\assets\Untitled.png" class="img-fluid" alt="Image 2" width="300px" height="100px"><br><br><br>
-                                        <h1>payment qr code</h1>
-                                      </div>
-                                </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                                <input type="button" name="make_payment" class="next action-button" value="Confirm"/>
-                            </fieldset>
-                            <fieldset>
-                                <div class="form-card">
-                                    <h2 class="fs-title text-center">Success !</h2>
-                                    <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-3">
-                                            <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image">
-                                        </div>
-                                    </div>
-                                    <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-7 text-center">
-                                            <h5>Your order is Successfull</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
+
+                            </div>
+
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="form-container">
+    <div class="form" id="form2">
+        <div class="container-fluid px-1 py-4 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <h3>Buy your plant here</h3>
+                    <div class="card">
+                        <h5 class="text-center mb-4" style="color: green;">Enter Your Payment Details</h5>
+                        <form class="form-card">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Payment
+                                        Type<span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="Enter plant id" ngModel required name="p_id">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Amount
+                                        <span class="text-danger">
+                                            *</span></label> <input type="text" placeholder="Enter plant image url"
+                                        ngModel required name="p_image"> </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Bank name
+                                        <span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_name">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Ifsc code
+                                        type<span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_type">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">
+                                        <span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_name">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Plant
+                                        type<span class="text-danger"> *</span></label>
+                                    <input type="text" placeholder="" ngModel required name="p_type">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <button class="back-button btn btn-danger" onclick="showForm('form1')">Back</button>
+                                </div>
+
+
+                                <div class="col-sm-6">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a
+                                        class="back-button btn btn-success" data-toggle="modal"
+                                        data-target="#submit">Submit</a>
+
+                                    <div class="modal fade" id="submit">
+                                        <div class="modal-dialog mt-2">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3 class="w-100 text-center mt-2"
+                                                        style="color: blueviolet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                                                        OrderInfo</h3>
+                                                    <button class="btn btn-danger" data-dismiss="modal">×</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <h4>Your Order placed successfully</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                    <button class="btn btn-success" data-dismiss="modal">Ok</button>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
                 </div>
             </div>
         </div>
