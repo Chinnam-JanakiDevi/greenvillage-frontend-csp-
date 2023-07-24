@@ -1,103 +1,231 @@
-<div class="container-fluid px-1 py-4 mx-auto">
+<!-- <div class="container-fluid px-1 py-4 mx-auto" id="form1">
     <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-9 col-md-9 col-11 text-center">
             <h3>Sell your plant here</h3>
             <div class="card" style="margin-top: 10px;">
                 <h5 class="text-center mb-4" style="color: green;margin-top: 10px;">Sell your plant here</h5>
-                <form class="form-card">
+                <form class="form-card" #r="ngForm" (ngSubmit)="Insert(r)">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Plant Id<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="Enter plant id" [(ngModel)]="info.p_id" name="p_id">
+                            <input type="text" placeholder="Enter plant id" ngModel name="p_id" required>
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant image url<span class="text-danger">
-                                    *</span></label> <input type="text" placeholder="Enter plant image url"
-                                [(ngModel)]="info.p_image" name="p_image"> </div>
+                                    *</span></label> <input type="text" placeholder="Enter plant image url" ngModel
+                                name="p_image" required> </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant Name <span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="info.p_name" name="p_name">
+                            <input type="text" placeholder="" ngModel name="p_name" required>
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Plant type<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="info.p_type" name="p_type">
+                            <input type="text" placeholder="" ngModel name="p_type" required>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant cost<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="info.p_cost" name="p_cost">
+                            <input type="text" placeholder="" ngModel name="p_cost" required>
                         </div>
                     </div>
 
-                    <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">&nbsp;
-
-                    <!-- <input type="submit" value="Update" class="btn btn-success my-2" (click)="Update()">&nbsp;
-
-                    &nbsp;
-                    <input type="submit" value="Read" class="btn btn-success my-2" (click)="Read()">&nbsp;
-
-                    <input type="submit" value="delete" class="btn btn-success my-2" (click)="Delete()">
-                    <input type="reset" class="btn btn-success my-2" value="reset"> -->
+                    <input type="submit" value="Insert" class="btn btn-success my-2" [disabled]="r.invalid">&nbsp;
 
                 </form>
             </div>
 
         </div>
     </div>
+</div> -->
+
+
+
+<div class="form-container">
+    <div class="form active" id="form1">
+        <div class="container-fluid px-1 py-4 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <h3
+                        style="color: rgb(239, 27, 27);font-size: large-xx;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        Buy your plant here</h3>
+                    <div class="card">
+                        <h5 class="text-center mb-4" style="color: green;">Enter Your Details</h5>
+                        <form class="form-card" #r="ngForm">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Plant Id<span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" placeholder="Enter plant id" ngModel name="p_id" required>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">plant image url<span class="text-danger">
+                                            *</span></label> <input type="text" placeholder="Enter plant image url"
+                                        ngModel name="p_image" required> </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">plant Name <span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" placeholder="" ngModel name="p_name" required>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">Plant type<span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" placeholder="" ngModel name="p_type" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3">plant cost<span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" placeholder="" ngModel name="p_cost" required>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button class="back-button btn btn-warning"
+                                        onclick="showForm('form1')">Cancel</button>
+                                </div>
+
+
+                                <div class="col-sm-6">
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <button class="back-button btn btn-success" onclick="showForm('form2')"
+                                        [disabled]="r.invalid" (click)="Insert(r)">
+                                        <!-- <input type="submit" value="Insert" class="btn btn-success my-2" [disabled]="r.invalid"> -->
+                                        Next</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
 </div>
 
-<!-- <form>
+<div class="form-container">
 
-    <h2 style="text-align: center;"><input type="text" id="name" name="catg" placeholder="enter your plant id"
-            [(ngModel)]="info.p_id">
-    </h2>
+    <div class="form" id="form2">
+        <div class="form-group">
+            <br>
+            <div class="form-group">
+                <br>
+                <pre style="text-align: center;font-size: xx-large;font-weight: bolder;color:black;">PLANT TABLE</pre>
+                <form #r="ngForm" (ngSubmit)="Insert1(r)">
+                    <table align="center" cellpadding="10">
+                        <tr>
+                            <td>Plant Name</td>
+                            <td><input type="text" id="name" name="plant_name" placeholder="enter your plant name" ngModel required>
+                                <div *ngIf="r.controls['catg']?.['touched'] && r.controls['plant_name']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['plant_name']?.['errors']?.['required']">
+                                        Enter your plant name
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Soil Type</td>
+                            <td><input type="text" id="name" name="soil_type" placeholder="enter soil_type" ngModel required>
+                                <div *ngIf="r.controls['soil_type']?.['touched'] && r.controls['soil_type']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['soil_type']?.['errors']?.['required']">
+                                        Enter soil type
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PH Range</td>
+                            <td><input type="text" id="name" name="ph_range" placeholder="enter ph_range" ngModel required>
+                                <div *ngIf="r.controls['ph_range']?.['touched'] && r.controls['ph_range']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['ph_range']?.['errors']?.['required']">
+                                        Enter ph Range
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Sun Light</td>
+                            <td><input type="text" id="name" name="sunlight" placeholder="enter sunlight" ngModel required>
+                                <div *ngIf="r.controls['sunlight']?.['touched'] && r.controls['sunlight']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['sunlight']?.['errors']?.['required']">
+                                        Enter Sun Light
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Watering</td>
+                            <td><input type="text" id="name" name="watering" placeholder="enter Watering" ngModel required>
+                                <div *ngIf="r.controls['watering']?.['touched'] && r.controls['watering']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['watering']?.['errors']?.['required']">
+                                        Enter Watering
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>Fertilizer</td>
+                            <td><input type="text" id="name" name="fertilizer" placeholder="enter Fertilizer" ngModel required>
+                                <div *ngIf="r.controls['fertilizer']?.['touched'] && r.controls['fertilizer']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['fertilizer']?.['errors']?.['required']">
+                                        Enter Fertilizer
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td><input type="text" id="name" name="height" placeholder="enter Height" ngModel required>
+                                <div *ngIf="r.controls['height']?.['touched'] && r.controls['height']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['height']?.['errors']?.['required']">
+                                        Enter Height
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>oxygen produced</td>
+                            <td><input type="text" id="name" name="oxygen_level" placeholder="enter oxygen level" ngModel required>
+                                <div *ngIf="r.controls['oxygen_level']?.['touched'] && r.controls['oxygen_level']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['oxygen_level']?.['errors']?.['required']">
+                                        Enter oxygen level
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Image Url</td>
+                            <td><input type="text" id="name" name="img_url" placeholder="enter url" ngModel required>
+                                <div *ngIf="r.controls['img_url']?.['touched'] && r.controls['img_url']?.['errors']" class="red">
+                                    <div *ngIf="r.controls['img_url']?.['errors']?.['required']">
+                                        Enter url
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+            
+                            <td align="center" colspan="1"><input type="submit" value="submit" [disabled]="r.invalid">
+            
+                        </tr>
+                    </table>
+                </form>
 
-
-    <h2 align="center" colspan="1"><input type="submit" value="submit" (click)="Read()"></h2>
-
-    <br>
-    <div *ngIf="canShowData">
-        <h1 style="text-align: center;font-size: xx-large;font-weight: bolder;color:black;">Plant Details</h1>
-        <table align="center" cellpadding="10">
-
-            <tr>
-                <td>plant id</td>
-                <td><input type="text" id="name" name="soil_type" placeholder="enter your plant id"
-                        [(ngModel)]="info.p_id" [value]=a[0] disabled>
-                </td>
-            </tr>
-            <tr>
-                <td>Plant image</td>
-                <td><input type="text" id="name" name="ph_range" placeholder="enter ph_range" [(ngModel)]="info.p_image"
-                        [value]=a[1]>
-                </td>
-            </tr>
-            <tr>
-                <td>Plant name</td>
-                <td><input type="text" id="name" name="sunlight" placeholder="enter sunlight" [(ngModel)]="info.p_name"
-                        [value]=a[2]>
-                </td>
-            </tr>
-            <tr>
-                <td>Plant Type</td>
-                <td><input type="text" id="name" name="watering" placeholder="enter watering" [(ngModel)]="info.p_type"
-                        [value]=a[3]>
-                </td>
-            </tr>
-            <tr>
-                <td>Cost</td>
-                <td><input type="number" id="name" name="fertilizer" placeholder="enter HRA_per"
-                        [(ngModel)]="info.p_cost" [value]=a[4]>
-                </td>
-            </tr>
-
-
-
-        </table>
+        </div>
     </div>
-
-
-</form> -->
+</div>

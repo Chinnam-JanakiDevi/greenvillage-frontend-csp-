@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SignupserviceService } from '../signupservice.service';
 import { Subscription } from 'rxjs';
-import { Signupinterface, sellplant, InsertedSuccess } from '../signupinterface';
+import { sellplant, InsertedSuccess, plantDetailsInterface, UniqueConstraintError } from '../signupinterface';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sellplant',
@@ -22,22 +23,53 @@ export class SellplantComponent implements OnInit {
   // canShowData=false;
   SuccessMsg = '';
   ErrorMsg = '';
-  Insert() {
+  Insert(Form: NgForm) {
     this.ErrorMsg = '';
     this.SuccessMsg = '';
 
-    this.Subscription = this.Service.Insert1(this.info).subscribe(
+    this.Subscription = this.Service.Insert1(Form.value).subscribe(
       (data) => {
         if (data) {
-          alert("success")
+          alert("success");
           console.log(data);
         }
         else {
           console.log("Failed");
         }
+        // Form.reset();
       }
     )
   }
+
+  info1: plantDetailsInterface = {
+    plant_name: '',
+    soil_type: '',
+    ph_range: '',
+    sunlight: '',
+    watering: '',
+    fertilizer: '',
+    height: '',
+    oxygen_level: '',
+    img_url: '',
+  };
+
+
+  Insert1(Form: NgForm) {
+    console.log(Form.value);
+    this.Subscription = this.Service.Insert3(Form.value).subscribe({
+      next: (Data: InsertedSuccess | UniqueConstraintError) => {
+        if ('errorNum' in Data) {
+          this.ErrorMsg = `${this.info1.plant_name} alredy Exists`;
+        } else {
+          this.SuccessMsg = `${this.info1.plant_name} Inserted Succesfully`;
+          Form.reset();
+        }
+
+      }
+    }
+    )
+  }
+}
   // a = [];
   // Read() {
   //   this.Subscription = this.Service.Read1(this.info.p_id).subscribe(
@@ -96,4 +128,3 @@ export class SellplantComponent implements OnInit {
   //     }
   //   )
   // }
-}

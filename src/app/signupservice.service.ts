@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { InsertedSuccess, UniqueConstraintError, Signupinterface, Read, sellplant, interface1 } from './signupinterface';
+import { InsertedSuccess, UniqueConstraintError, Signupinterface, Read, sellplant, interface1, plantDetailsInterface } from './signupinterface';
 
 
 @Injectable({
@@ -45,6 +45,15 @@ export class SignupserviceService {
     );
 
   }
+  Insert3(Details:plantDetailsInterface ):
+    Observable<InsertedSuccess | UniqueConstraintError> {
+    return this.http.post<InsertedSuccess | UniqueConstraintError>(
+      this.url + 'info/Insert',
+      Details,
+      { headers: this.headers }
+  );
+  }
+  
   Read(email: String): Observable<Read> {
     return this.http.get<Read>(`${this.url}login/Read${email}`);
   }
@@ -68,4 +77,8 @@ export class SignupserviceService {
   Read3(plant_name: String): Observable<Read> {
     return this.http.get<Read>(`${this.url}info/Read${plant_name}`);
   }
+  Sread(p_name:String):Observable<Read>{
+    return this.http.get<Read>(`${this.url}sellplant/sRead${p_name}`)
+  }
+  
 }

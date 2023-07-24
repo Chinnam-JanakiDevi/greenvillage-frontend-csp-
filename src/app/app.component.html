@@ -183,13 +183,13 @@
                                                     <div *ngIf="r.controls['password']?.errors?.['required']">
                                                         Enter password
                                                     </div> -->
-                                                    <div *ngIf="r.controls['password']?.errors?.['minlength']" class="red">
-                                                        Password must be at least 8 characters long.
-                                                    </div>
-                                                    <div *ngIf="r.controls['password']?.errors?.['pattern']" class="red">
-                                                        Password must contain at least one lowercase letter, one
-                                                        uppercase letter, and one number.
-                                                    </div>
+                                                <div *ngIf="r.controls['password']?.errors?.['minlength']" class="red">
+                                                    Password must be at least 8 characters long.
+                                                </div>
+                                                <div *ngIf="r.controls['password']?.errors?.['pattern']" class="red">
+                                                    Password must contain at least one lowercase letter, one
+                                                    uppercase letter, and one number.
+                                                </div>
                                                 <!-- </div> -->
                                             </div>
                                         </div>
@@ -239,13 +239,16 @@
         <div class="main-search-input-wrap ms-auto p-1">
             <div class="main-search-input fl-wrap">
                 <!-- <button class="btn btn-danger" (click)="logout()">Logout</button> -->
-                <form class="form-inline my-2 my-lg-0" #r="ngForm" (ngSubmit)="Read()">
+                <form class="form-inline my-2 my-lg-0" #r="ngForm" (ngSubmit)="search(r)">
                     <input type="text" class="form-control mr-sm-2" name="search" placeholder="Search" ngModel
                         required />
                     <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
         </div>
+
+        
+
         <div class="profile-icon" onclick="toggleProfileCard()">{{readarray[0][0]}}</div>
         <div class="profile-card" id="profileCard">
             <!-- Your profile card content here -->
@@ -257,9 +260,6 @@
         </div>
 
     </div>
-
-
-
 
 
     <div class="container-fluid text-center ">
@@ -373,5 +373,25 @@
 
     </div>
 
+    <div *ngIf="show">
+        <br>
+        <button class="d-flex justify-content-center btn-danger" (click)="back()">Back</button><br>
+        <div *ngIf="!(readarray1.length==0)" class="grid-container">
+            <div *ngFor="let Eachflower of readarray1">
+                <div class="card" style="width: 18rem;">
+                    <img [src]="Eachflower[1]" alt="Image" width="287" height="200">
+                    <div class="card-body">
+                        <h5 class="card-title">ID :{{Eachflower[0]}}</h5>
+                        <p class="card-text">Name:{{Eachflower[2]}}</p>
+                        <p class="card-text">Type:{{Eachflower[3]}}</p>
+                        <p class="card-text">Cost{{Eachflower[4]}}</p>
+
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#more">More</button>&nbsp;
+                        <button class="btn btn-danger" routerLink="/form" routerLinkActive="active" (click)="back()">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <router-outlet></router-outlet>

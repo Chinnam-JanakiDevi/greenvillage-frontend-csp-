@@ -53,3 +53,14 @@ export interface Infointerface {
     oxygen_level:string;
     img_url:string
 }
+export interface plantDetailsInterface {
+    plant_name: string;
+    soil_type:string;
+    ph_range:string;
+    sunlight:string;
+    watering:string;
+    fertilizer:string;
+    height:string;
+    oxygen_level:string;
+    img_url:string
+}

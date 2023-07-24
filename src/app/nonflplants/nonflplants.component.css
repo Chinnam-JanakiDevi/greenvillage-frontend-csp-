@@ -16,4 +16,13 @@ table, th, td {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
-  
+  .img{
+    /* margin-top: 30px;
+    margin-right: 70px;
+    */
+    opacity: 0.8;
+    border-radius: 50px ;
+}
+.img:hover {
+    opacity: 0.9;
+  }

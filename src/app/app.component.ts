@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  constructor(private service: SignupserviceService,private Router:Router) { }
+  constructor(private service: SignupserviceService, private Router: Router) { }
   a = false; //login page
   b = false;//registration page
   c = false;//green village frontend
@@ -28,14 +28,14 @@ export class AppComponent implements OnInit, OnDestroy {
     this.b = false;
     this.e = false;
     this.a = true;
-    this.d=true;
+    this.d = true;
   }
   login() {
     // this.d=true;
     this.a = false;
     this.e = false;
     this.b = true;
-    this.d=true
+    this.d = true
 
   }
   logout() {
@@ -53,7 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
   loginform: Logininterface = {
     email: '',
     password: '',
-    name:'',
+    name: '',
   }
 
   readarray = [];
@@ -71,11 +71,11 @@ export class AppComponent implements OnInit, OnDestroy {
           this.ErrorMsg = `${this.signup.email} alredy Exists`;
         } else {
           this.SuccessMsg = `${this.signup.email} Inserted Succesfully`;
-          this.a=true;
-          this.b=false
+          this.a = true;
+          this.b = false
         }
         Form.reset();
-        
+
       }
     }
     )
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit, OnDestroy {
             this.e = false;
             this.c = true;
             this.d = false;
-           this. Router.navigate(['/home']);
+            this.Router.navigate(['/home']);
           }
           else {
             this.error = true;
@@ -103,6 +103,21 @@ export class AppComponent implements OnInit, OnDestroy {
 
         }
       })
+  }
+  readarray1 = [];
+  show = false;
+  search(Form: NgForm) {
+    console.log(Form.value.search);
+    this.Subscription = this.service.Sread(Form.value.search).subscribe(
+      (data: any) => {
+        // console.log(Form.value.search);
+        this.readarray1 = data.Result;
+        console.log(this.readarray1);
+        this.show = true;
+      })
+  }
+  back(){
+    this.show=false;
   }
   ngOnDestroy() {
     this.Subscription.unsubscribe();

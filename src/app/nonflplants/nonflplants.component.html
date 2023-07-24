@@ -1,4 +1,4 @@
-<div class="grid-container" *ngIf="canshow">
+<!-- <div class="grid-container" *ngIf="canshow">
   <button class="btn m-2" (click)="Read()"><img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGh_cm_aEf-BaJfYnIfRQzbBkVZmyRYGD4g&usqp=CAU"
       alt="Card image cap" width="287" height="200" /><br>Flowers</button>&nbsp;
@@ -17,6 +17,54 @@
   <button class="btn  m-2" (click)="Read()"><img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGh_cm_aEf-BaJfYnIfRQzbBkVZmyRYGD4g&usqp=CAU"
       alt="Card image cap" width="287" height="200" /><br>Fruits</button>&nbsp;
+</div> -->
+<div class="grid-container" *ngIf="canshow">
+  <div class="row">
+    <div class="col-3">
+      <img src="https://images.unsplash.com/photo-1559759708-d6e99b50f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zmxvd2VyJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" width="287" height="200" class="img" (click)="Read()">
+      <h5>Flower Plants</h5>
+    </div>
+    <div class="col-3">
+      <img src="https://media.istockphoto.com/id/995518546/photo/assortment-of-colorful-ripe-tropical-fruits-top-view.webp?b=1&s=170667a&w=0&k=20&c=frnzxYjtn8MP9kpLy7AY2DU_s9ohVBlAflpUacaDx7w=" width="287" height="200" class="img" (click)="Read()">
+      <h5>Fruit Plants</h5>
+    </div>
+    <div class="col-3">
+      <img src="https://cleanwatergear.com/wp-content/uploads/2021/06/types-of-aquatic-plants.jpg" width="287"
+        height="200" class="img" (click)="Read()">
+      <h5>Aquatic Plants</h5>
+    </div>
+    <div class="col-3">
+
+      <img src="https://media.istockphoto.com/id/1500495216/photo/closeup-shot-of-a-white-hibiscus-flower.webp?b=1&s=170667a&w=0&k=20&c=xom0Kzg0pwmVRV5DWsJa9f-4GbPJ0AVGd8Ww_6jP3JI=" width="287" height="200" class="img" (click)="Read()">
+      <h5>Edible Plants</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <img src="https://www.yesmagazine.org/wp-content/uploads/imports/6e082557eefc433e9c8b352059f630b9.gif" width="287"
+        height="200" class="img" (click)="Read()">
+      <h5>Medicinal Plants </h5>
+    </div>
+    <div class="col-3">
+      <img
+        src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"
+        width="287" height="200" class="img" (click)="Read()">
+        <h5>Medicinal Plants </h5>
+    </div>
+    <div class="col-3">
+      <img
+        src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"
+        width="287" height="200" class="img" (click)="Read()">
+        <h5>Medicinal Plants </h5>
+    </div>
+    <div class="col-3">
+
+      <img
+        src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80"
+        width="287" height="200" class="img" (click)="Read()">
+        <h5>Medicinal Plants </h5>
+    </div>
+  </div>
 </div>
 <div *ngIf="show">
   <br>
